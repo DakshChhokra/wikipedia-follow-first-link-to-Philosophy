@@ -1,0 +1,11 @@
+
+
+In wikipedia it is theoretically possible to reach the Philosophy page by just clicking on the first link on every page from 97% of all wikipedia pages. Common estimates suggest that it takes a median of 23 clicks to get from most pages to the Philosophy page. 
+
+We want to test this hypothesis by going through a representative sample of wikipedia pages and storing their paths to Philosophy. We want to check the median path size after starting at a random selection of pages. There are 29 million pages on wikipedia in English right now, and we want to sample a representative distribution and check if the 97% number is accurate.
+
+
+Things used in project: Graph and graph algorithms, Information Networks(Web Scraping)
+
+We used graph algorithms and graph representation for the analysis of paths from a random “start page” to the “target page”. Once we have all the individual paths, we can use graph traversal algorithms to find the “funnels” where different paths converge. 
+Information Networks (World Wide Web)/Document Search (aka Information Retrieval)
