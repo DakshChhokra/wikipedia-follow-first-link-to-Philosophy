@@ -31,10 +31,10 @@ public class Scraper {
     }
 
     /**
-     *
+     * Creates an arraylist of nodes which give the path from the input node to Philosophy
      * @param startLink
-     * @return An arraylist of nodes which give the path
-     * @throws IOException
+     * @return An arraylist of nodes
+     * @throws IOException when any link is unreachable.
      */
     public ArrayList<Node> getPath(String startLink) throws IOException{
         ArrayList<Node> path = new ArrayList<Node>();
@@ -55,6 +55,12 @@ public class Scraper {
         return path;
     }
 
+    /**
+     * Primary helper method to traverse through the first link. Called inside getPath
+     * @param inputNode
+     * @param path
+     * @throws IOException  when any link is unreachable.
+     */
      void getPathMain(Node inputNode, ArrayList<Node> path) throws IOException {
          System.out.println("************************************************************************************");
          System.out.print("Current Node is: ");
@@ -114,6 +120,12 @@ public class Scraper {
 
     }
 
+    /**
+     * If the traverser hits a node which already exists in the graph, there is no need to scrape anymore wikipedia
+     * pages. This method simply appends the existing path to the current path, and returns it to the main method
+     * @param current The current page in the path
+     * @param path The path which has been created until now
+     */
     void traverseToTarget(Node current, ArrayList<Node> path) {
         path.add(current);
         System.out.println("Helper begins");
@@ -126,10 +138,19 @@ public class Scraper {
         }
     }
 
+    /**
+     * Simply returns the underlying graph
+     * @return Return the adjacency list representation of the underlying graph
+     */
     public HashMap<Node,ArrayList<Node>> getUnderlyingGraph() {
         return graph.getAdjList();
     }
 
+    /**
+     * Returns the underlying graph in String form
+     * @return Return the adjacency list representation of the underlying graph where every Node is a String.
+     * @throws IOException when any link is unreachable.
+     */
     public HashMap<String, ArrayList<String>> getUnderlyingGraphInStringForm() throws IOException {
         HashMap<String,ArrayList<String>> stringMap = new HashMap<>();
 
@@ -146,6 +167,12 @@ public class Scraper {
         return stringMap;
     }
 
+    /**
+     * This method validates all the links in every wikipedia page. We filter out particular strings to ensure we get
+     * the right sort of links.
+     * @param current
+     * @return If true, then the link is validated. Else, false.
+     */
     boolean isIgnored(String current) {
         return (!current.contains("Help")
                 && !current.contains("#cite_note")
@@ -174,7 +201,10 @@ public class Scraper {
     }
 
 
-
+    /**
+     * Writes the graph to a csv which is useful for analysis.
+     * @throws IOException when any link is unreachable.
+     */
     public void writeTOText() throws IOException {
             PrintWriter out = new PrintWriter("text_graph.txt");
             out.println("Graph:");
@@ -203,16 +233,30 @@ public class Scraper {
     }
 
 
+    /**
+     * Get the lengths of all the paths
+     * @return a hash map with keys as pages and values as the length of the path
+     */
     public HashMap<String, Integer> getSizeOfLength() {
         return this.lengthOfPaths;
     }
 
+    /**
+     * Get the length of the path from a given link to Philosophy.
+     * @param inputLink
+     * @return length of the path
+     */
     public int getLengthOfOneParticularNode(String inputLink) {
         return this.lengthOfPaths.get(inputLink);
     }
 
-    public int getLengthOfOneParticularNode(Node inputLink) {
-        return this.lengthOfPaths.get(inputLink.getUrl());
+    /**
+     * Get the length of the path from a given link to Philosophy.
+     * @param inputNode
+     * @return length of the path
+     */
+    public int getLengthOfOneParticularNode(Node inputNode) {
+        return this.lengthOfPaths.get(inputNode.getUrl());
     }
 
 
