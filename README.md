@@ -1,7 +1,19 @@
 # wikipedia-follow-first-link-to-Philosophy
-This program takes input nodes, and traverses the first link on each page until we reach Philosophy. A path is created every time you input a wikipedia link. This program finally outputs and displays a graph.
+This program takes input nodes, and traverses the first link on each page until we reach Philosophy. A path is created every time you input a wikipedia link. This program finally outputs and displays a graph. Multiple source pages can be added, and the graph shows the path from all of those pages.
 
-Installation:
+You can then enter in any number of wikipedia links and program crawls over first link in the page repeatedly until we reach Philosophy. The path is then displayed along with its size. 
+ 
+
+After you have done this process a few times for a few different pages, you can click on "get funnels" which shows you all the nodes which "act" as funnels in the graph formed by the paths of the pages you input.
+
+You can also click on "Show Graph" which will show a visualization of the graph created from the various paths
+
+# Sample Paths
+
+![](images/sample_1.jpg)
+![](images/sample_2.jpg)
+
+# Installation:
 
 Before you can run this file you need to ensure that you have installed the following libraries. We use these to visually display the graphs we create:
 
@@ -14,7 +26,8 @@ You can head to this link (http://graphstream-project.org/doc/Tutorials/GraphStr
 To run the program run h5_ui.java. This class is the main Driver of the entire program. It contains the UI elements, and pulls elements from all over On startup you'll be asked to enter the "final" node. We have done our analysis with the final node being https://en.wikipedia.org/wiki/Philosophy.
 
 Enter this link and click on continue.
-
+![](images/sample_1.jpg)
+![](images/sample_2.jpg)
 
 You can then enter in any number of wikipedia links and program crawls over first link in the page repeatedly until we reach Philosophy. The path is then displayed along with its size. 
  
@@ -25,7 +38,7 @@ You can also click on "Show Graph" which will show a visualization of the graph 
 
 ***************************************************************************************************************************
 
-This is what the other classes do:
+# Brief Description of the Structure
 
 Node.java: 
 This class stores wikipedia links, parses out their page names, and overall acts as a backnone. It's main function is to represent the nodes in out graph
