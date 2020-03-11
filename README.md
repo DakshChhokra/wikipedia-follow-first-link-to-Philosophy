@@ -4,7 +4,7 @@ This program takes input nodes, and traverses the first link on each page until 
 You can then enter in any number of wikipedia links and program crawls over first link in the page repeatedly until we reach Philosophy. The path is then displayed along with its size. 
  
 
-After you have done this process a few times for a few different pages, you can click on "get funnels" which shows you all the nodes which "act" as funnels in the graph formed by the paths of the pages you input.
+After you have done this process a few times for a few different pages, you can click on "Get Funnels" which shows you all the nodes which "act" as funnels in the graph formed by the paths of the pages you input.
 
 You can also click on "Show Graph" which will show a visualization of the graph created from the various paths
 
