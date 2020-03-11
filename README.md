@@ -12,6 +12,9 @@ You can also click on "Show Graph" which will show a visualization of the graph 
 
 ![](images/sample_1.jpg)
 ![](images/sample_2.jpg)
+![](images/sample_3.tiff)
+![](images/sample_4.tiff)
+![](images/sample_5.tiff)
 
 # Installation:
 
