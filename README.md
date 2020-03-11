@@ -26,8 +26,6 @@ You can head to this link (http://graphstream-project.org/doc/Tutorials/GraphStr
 To run the program run h5_ui.java. This class is the main Driver of the entire program. It contains the UI elements, and pulls elements from all over On startup you'll be asked to enter the "final" node. We have done our analysis with the final node being https://en.wikipedia.org/wiki/Philosophy.
 
 Enter this link and click on continue.
-![](images/sample_1.jpg)
-![](images/sample_2.jpg)
 
 You can then enter in any number of wikipedia links and program crawls over first link in the page repeatedly until we reach Philosophy. The path is then displayed along with its size. 
  
