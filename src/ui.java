@@ -7,7 +7,7 @@ import java.util.Map;
 
 
 
-public class hw5_ui implements ActionListener{
+public class ui implements ActionListener{
 
 	JFrame frame = new JFrame();
 	JFrame start = new JFrame();
@@ -34,7 +34,7 @@ public class hw5_ui implements ActionListener{
 
 	Scraper scraper;
 
-	hw5_ui(){
+	ui(){
 
 
 
@@ -227,7 +227,7 @@ public class hw5_ui implements ActionListener{
 	 */
 	public static void main(String[] args){
 
-		new hw5_ui();
+		new ui();
 
 
 	}
